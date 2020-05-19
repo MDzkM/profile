@@ -34,6 +34,18 @@ export const Styles = styled.div`
         color: #F4BC1C!important;
     }
 
+    .accounts a:first-child svg {
+        margin: -3.33px;
+    }
+
+    .accounts svg {
+        opacity: 0.7
+    }
+
+    .accounts svg:hover, .accounts svg:focus {
+        opacity: 1
+    }
+
     @media only screen and (min-width: 992px) {
         padding-top: 17%;
 

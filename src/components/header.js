@@ -107,15 +107,15 @@ export const StyledHeader = styled.header`
     display: none;
   }
 
-  .nav-link a {
+  .dropdown-links {
+    margin-bottom: 1rem;
+  }
+
+  .nav-item a {
     opacity: 0.75;
   }
 
-  .nav-link a:focus {
-    opacity: 1;
-  }
-
-  .nav-link a:hover {
+  .nav-item a:focus, .nav-item a:hover {
     opacity: 1;
   }
 
@@ -125,10 +125,6 @@ export const StyledHeader = styled.header`
 
   .navbar-brand:hover {
     color: #007bff
-  }
-
-  .btn-divider {
-    margin-right: 15px;
   }
   
   @media only screen and (min-width: 992px) {
@@ -140,6 +136,10 @@ export const StyledHeader = styled.header`
     
     .theme-toggler {
       display: block;
+    }
+
+    .dropdown-links {
+      margin-bottom: 0;
     }
   }
 `
@@ -165,7 +165,7 @@ class Header extends Component {
       <StyledHeader>
         <Navbar expand="lg">
           <Navbar.Brand><Link to="/" style={{textDecoration: `none`, fontWeight: `bold`}}>mdzkm.</Link></Navbar.Brand>
-          <Nav.Item className="ml-auto theme-toggler-mobile btn-divider"><Button variant="light" onClick={toggleLightMode}><span role="img" aria-label="Light Mode">☀</span></Button></Nav.Item>
+          <Nav.Item className="ml-auto theme-toggler-mobile mr-2"><Button variant="light" onClick={toggleLightMode}><span role="img" aria-label="Light Mode">☀</span></Button></Nav.Item>
           <Nav.Item className="theme-toggler-mobile"><Button variant="dark" onClick={toggleDarkMode}><span role="img" aria-label="Dark Mode">🌙</span></Button></Nav.Item>
           <Navbar.Toggle aria-controls="basic-navbar-nav" style={{border: 0}}>
             <button className={`hamburger hamburger--squeeze ${isActive ? 'is-active' : ''}`} type="button" onClick={this.toggleHamburger}>
@@ -176,12 +176,12 @@ class Header extends Component {
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link><Link to="/about" style={{textDecoration: `none`}}>About</Link></Nav.Link>
-              <Nav.Link><Link to="/projects" style={{textDecoration: `none`}}>Projects</Link></Nav.Link>
-              <Nav.Link><Link to="/blog" style={{textDecoration: `none`}}>Blog</Link></Nav.Link>
+              <Nav.Item className="mr-4 dropdown-links"><Link to="/about" style={{textDecoration: `none`}}>About</Link></Nav.Item>
+              <Nav.Item className="mr-4 dropdown-links"><Link to="/projects" style={{textDecoration: `none`}}>Projects</Link></Nav.Item>
+              <Nav.Item className="mr-4 dropdown-links"><Link to="/blog" style={{textDecoration: `none`}}>Blog</Link></Nav.Item>
             </Nav>
           </Navbar.Collapse>
-          <Nav.Item className="ml-auto theme-toggler btn-divider"><Button variant="light" onClick={toggleLightMode}><span role="img" aria-label="Light Mode">☀</span></Button></Nav.Item>
+          <Nav.Item className="ml-auto theme-toggler mr-2"><Button variant="light" onClick={toggleLightMode}><span role="img" aria-label="Light Mode">☀</span></Button></Nav.Item>
           <Nav.Item className="ml-auto theme-toggler"><Button variant="dark" onClick={toggleDarkMode}><span role="img" aria-label="Dark Mode">🌙</span></Button></Nav.Item>
         </Navbar>
       </StyledHeader>
