@@ -644,3 +644,13 @@ body {
 #___gatsby, #gatsby-focus-wrapper {
   height: 100%;
 }
+/* Footer Icons */
+.footer-icons a:first-child svg {
+  margin: -3.33px;
+}
+.footer-icons svg {
+  opacity: 0.7
+}
+.footer-icons svg:hover, .footer-icons svg:focus {
+  opacity: 1
+}
