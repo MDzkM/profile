@@ -20,9 +20,18 @@ export const GlobalStyles = createGlobalStyle`
   }
   .navbar {
     background-color: ${({ theme }) => theme.body};
+    transition: all 0.25s linear;
   }
   .navbar-light .navbar-brand {
     color: ${({ theme }) => theme.text};
+    transition: all 0.25s linear;
+  }
+  hr {
+    border-color: ${({ theme }) => theme.text};
+    transition: all 0.25s linear;
+  }
+  .background-card {
+    background-color: ${({ theme }) => theme.subBody};
     transition: all 0.25s linear;
   }
 `

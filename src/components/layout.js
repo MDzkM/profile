@@ -43,18 +43,20 @@ class Layout extends Component {
           <Header />
           <div
             style={{
+              display: `flex`,
+              flexDirection: `column`,
               margin: `0 auto`,
               maxWidth: 960,
               padding: `0 1.0875rem 1.45rem`,
-              minHeight: `100%!important`,
+              height: `100%`,
             }}
           >
             <main>{children}</main>
-            {/* <footer>
-              Copyright © {new Date().getFullYear()} MDzkM. Built with
+            <footer className="mt-auto" style={{padding: `5% 0`}}>
+              © {new Date().getFullYear()} MDzkM. Built with
               {` `}
               <a href="https://www.gatsbyjs.org">Gatsby</a>.
-            </footer> */}
+            </footer>
           </div>
         </>
       </ThemeProvider>

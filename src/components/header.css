@@ -1,3 +1,7 @@
+.mobile-collapse {
+    display: none;
+}
+
 .hamburger {
     padding: 15px 0 15px 15px;
     display: inline-block;
@@ -129,7 +133,7 @@
     }
 
     .theme-toggler {
-        display: block;
+        display: inline-block;
     }
 
     .dropdown-links {
@@ -138,5 +142,11 @@
 
     .desktop-nav {
         margin-left: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .mobile-collapse {
+        display: inline-block;
     }
 }

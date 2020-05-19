@@ -52,6 +52,10 @@ export const Styles = styled.div`
         opacity: 1
     }
 
+    .accounts a {
+        margin-right: 5%;
+    }
+
     @media only screen and (min-width: 992px) {
         padding-top: 17%;
 

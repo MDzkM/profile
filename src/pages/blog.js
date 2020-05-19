@@ -10,6 +10,8 @@ const BlogPage = ({ data }) => {
 		<Layout>
             <SEO title="Blog" />
 			<div style={{paddingTop: `10%`}}>
+				<h1 style={{textAlign: `center`}}>My Blog Posts</h1>
+				<p style={{textIndent: `2rem`, paddingTop: `2%`, paddingBottom: `3%`, textAlign: `justify`, textJustify: `inter-word`}}>The content of these posts may vary. Some of this might be informative to you, but others are for my personal entertainment. Although most of these would probably be my ramblings about my not-very-few-and-far-between random musings. I hope that you enjoy your time here!</p>
 				{edges.map((edge, id) => {
 					const { frontmatter } = edge.node;
 					return (
@@ -17,7 +19,7 @@ const BlogPage = ({ data }) => {
                             {id !== 0 ? <hr/> : <></>}
                             <div key={frontmatter.path}>
                                 <div style={{display: `flex`, flexDirection: `row`}}>
-                                    <Link to={frontmatter.path}><h2>{frontmatter.title}</h2></Link>
+                                    <Link to={frontmatter.path}><h2 style={{fontFamily: `georgia`}}>{frontmatter.title}</h2></Link>
                                     &nbsp;
                                 </div>
                                 <p>{frontmatter.excerpt}</p>

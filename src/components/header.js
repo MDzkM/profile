@@ -3,7 +3,7 @@ import React, { Component } from "react"
 import "./header.css"
 import { Navbar, Nav, Button } from "react-bootstrap"
 
-import { toggleDarkMode, toggleLightMode } from "../services/useDarkMode"
+import { isBrowser, toggleDarkMode, toggleLightMode } from "../services/useDarkMode"
 
 
 class Header extends Component {
@@ -20,6 +20,15 @@ class Header extends Component {
     }) 
   }
 
+  setLightMode = () => {
+    toggleLightMode()
+    if (isBrowser()) { window.location.reload() }
+  }
+
+  setDarkMode = () => {
+    toggleDarkMode()
+    if (isBrowser()) { window.location.reload() }
+  }
 
   render() {
     const { isActive } = this.state
@@ -28,15 +37,17 @@ class Header extends Component {
         <div className="brand">
           <Navbar.Brand><Link to="/" style={{textDecoration: `none`, fontWeight: `bold`}}>mdzkm.</Link></Navbar.Brand>
         </div>
-        <Nav.Item className="ml-auto theme-toggler-mobile mr-2"><Button variant="light" onClick={toggleLightMode}><span role="img" aria-label="Light Mode">☀</span></Button></Nav.Item>
-        <Nav.Item className="theme-toggler-mobile"><Button variant="dark" onClick={toggleDarkMode}><span role="img" aria-label="Dark Mode">🌙</span></Button></Nav.Item>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" style={{border: 0}}>
-          <button className={`hamburger hamburger--squeeze ${isActive ? 'is-active' : ''}`} type="button" onClick={this.toggleHamburger}>
-            <span className="hamburger-box">
-              <span className="hamburger-inner"></span>
-            </span>
-          </button>
-        </Navbar.Toggle>
+        <Nav.Item className="ml-auto theme-toggler-mobile mr-2"><Button variant="light" onClick={this.setLightMode}><span role="img" aria-label="Light Mode">☀</span></Button></Nav.Item>
+        <Nav.Item className="theme-toggler-mobile"><Button variant="dark" onClick={this.setDarkMode}><span role="img" aria-label="Dark Mode">🌙</span></Button></Nav.Item>
+        <div className="mobile-collpase">
+          <Navbar.Toggle aria-controls="basic-navbar-nav" style={{border: 0}}>
+            <button className={`hamburger hamburger--squeeze ${isActive ? 'is-active' : ''}`} type="button" onClick={this.toggleHamburger}>
+              <span className="hamburger-box">
+                <span className="hamburger-inner"></span>
+              </span>
+            </button>
+          </Navbar.Toggle>
+        </div>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto desktop-nav">
             <Nav.Item className="mr-4 dropdown-links"><Link to="/about" style={{textDecoration: `none`}}>About</Link></Nav.Item>
@@ -44,8 +55,8 @@ class Header extends Component {
             <Nav.Item className="mr-4 dropdown-links"><Link to="/blog" style={{textDecoration: `none`}}>Blog</Link></Nav.Item>
           </Nav>
         </Navbar.Collapse>
-        <Nav.Item className="ml-auto theme-toggler mr-2"><Button variant="light" onClick={toggleLightMode}><span role="img" aria-label="Light Mode">☀</span></Button></Nav.Item>
-        <Nav.Item className="ml-auto theme-toggler"><Button variant="dark" onClick={toggleDarkMode}><span role="img" aria-label="Dark Mode">🌙</span></Button></Nav.Item>
+        <Nav.Item className="ml-auto theme-toggler mr-2"><Button variant="light" onClick={this.setLightMode}><span role="img" aria-label="Light Mode">☀</span></Button></Nav.Item>
+        <Nav.Item className="ml-auto theme-toggler"><Button variant="dark" onClick={this.setDarkMode}><span role="img" aria-label="Dark Mode">🌙</span></Button></Nav.Item>
       </Navbar>
     )
   }
