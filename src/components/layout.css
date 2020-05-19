@@ -625,7 +625,10 @@ pre tt:after {
     font-size: 100%;
   }
 }
-input:focus, textarea:focus, select:focus {
+button {
+  outline: none!important;
+}
+a:focus, button:focus, input:focus, textarea:focus, select:focus {
   outline: none;
 }
 /* Hide scrollbar for Chrome, Safari and Opera */

@@ -18,12 +18,12 @@ class TopLanding extends Component {
                     <div className="description">
                         <h3>Muhammad Dzikra Muzaki</h3>
                         <h5 className="alias">a.k.a. mdzkm</h5>
-                        <p>Hi there! I’m a full stack web developer and an aspiring game developer who is currently studying in <a href="https://www.ui.ac.id" target="_blank" rel="noopener noreferrer" className="universitas-indonesia">Universitas Indonesia</a>.</p>
+                        <p>Hi there! I’m a full stack web developer and an aspiring game developer who is currently studying in <a href="https://www.ui.ac.id" target="_blank" rel="noopener noreferrer" className="universitas-indonesia" title="Official website of Universitas Indonesia">Universitas Indonesia</a>.</p>
                         <div className="accounts">
-                            <a href="https://www.github.com/MDzkM" target="_blank" rel="noopener noreferrer"><Icon icon={socialGithubCircular} style={{fontSize: '53.33px'}} /></a>
-                            <a href="https://www.gitlab.com/MDzkM" target="_blank" rel="noopener noreferrer"><Icon icon={gitlabCircle} style={{fontSize: '48px'}} /></a>
-                            <a href="https://www.youtube.com/channel/UCIeCJ3CGn5ciVIEDNzkuABg" target="_blank" rel="noopener noreferrer"><Icon icon={youtubeCircle} style={{fontSize: '48px'}} /></a>
-                            <a href="https://www.linkedin.com/in/MDzkM" target="_blank" rel="noopener noreferrer"><Icon icon={linkedinCircle} style={{fontSize: '48px'}} /></a>
+                            <a href="https://www.github.com/MDzkM" target="_blank" rel="noopener noreferrer" title="Github"><Icon icon={socialGithubCircular} style={{fontSize: '53.33px'}} /></a>
+                            <a href="https://www.gitlab.com/MDzkM" target="_blank" rel="noopener noreferrer" title="Gitlab"><Icon icon={gitlabCircle} style={{fontSize: '48px'}} /></a>
+                            <a href="https://www.youtube.com/channel/UCIeCJ3CGn5ciVIEDNzkuABg" target="_blank" rel="noopener noreferrer" title="Youtube"><Icon icon={youtubeCircle} style={{fontSize: '48px'}} /></a>
+                            <a href="https://www.linkedin.com/in/MDzkM" target="_blank" rel="noopener noreferrer" title="LinkedIn"><Icon icon={linkedinCircle} style={{fontSize: '48px'}} /></a>
                         </div>
                     </div>
                 </div>

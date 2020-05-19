@@ -7,7 +7,7 @@ import { toggleDarkMode, toggleLightMode } from "../services/useDarkMode"
 
 export const StyledHeader = styled.header`  
   .hamburger {
-    padding: 15px 15px;
+    padding: 15px 0 15px 15px;
     display: inline-block;
     cursor: pointer;
     transition-property: opacity, filter;
@@ -141,6 +141,10 @@ export const StyledHeader = styled.header`
     .dropdown-links {
       margin-bottom: 0;
     }
+
+    .desktop-nav {
+      margin-left: 0.5rem;
+    }
   }
 `
 
@@ -175,7 +179,7 @@ class Header extends Component {
             </button>
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
+            <Nav className="mr-auto desktop-nav">
               <Nav.Item className="mr-4 dropdown-links"><Link to="/about" style={{textDecoration: `none`}}>About</Link></Nav.Item>
               <Nav.Item className="mr-4 dropdown-links"><Link to="/projects" style={{textDecoration: `none`}}>Projects</Link></Nav.Item>
               <Nav.Item className="mr-4 dropdown-links"><Link to="/blog" style={{textDecoration: `none`}}>Blog</Link></Nav.Item>

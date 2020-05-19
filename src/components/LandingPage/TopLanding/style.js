@@ -14,10 +14,16 @@ export const Styles = styled.div`
         width: 30%;
         height: 30%;
         margin: 0 0 5%;
+        transition: all 0.15s linear;
     }
 
     .img-wrapper img {
         border-radius: 50%;
+    }
+
+    .img-wrapper:hover {
+        transform: scale(1.1);
+        transition: all 0.15s linear;
     }
 
     .description {
