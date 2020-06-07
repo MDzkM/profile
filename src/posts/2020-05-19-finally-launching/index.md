@@ -2,7 +2,7 @@
 path: '/blog/2020/05/19/finally-launching'
 date: '2020-05-19'
 title: 'Finally Launching'
-tags: ['gatsby', '2020']
+tags: ['2020', 'website', 'procrastination', 'launch']
 excerpt: 'The day I finally stopped procrastinating.'
 ---
 
