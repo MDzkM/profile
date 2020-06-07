@@ -49,7 +49,7 @@ So to further analyze the traffic we want to display every leftover data by addi
 Then, you'd want to convert it into a txt and strip any trailing data (if there's any) by running this command in the terminal.
 
 ```bash
-cat [INPUT_FILE].csv | cut -d "," -f 1 | cut -d "\"" -f 2 | grep -vE [FIELD_NAME] > [OUTPUT_FILE].txt
+cat [IN_FILE].csv | cut -d "," -f 1 | cut -d "\"" -f 2 | grep -vE [FIELD_NAME] > [OUT_FILE].txt
 ```
 
 From the code segment above we can see that ```cut -d "," -f 1``` is used to separate each fields by the comma and getting the first field only, ```cut -d "\"" -f 1``` is used to remove the quotation marks from the remaining data, and ```grep -vE [FIELD_NAME]``` is used to output everything except the field name which in our case would be **"Leftover Capture Data"** and the input and output filename would both be **"leftover"**.
@@ -225,4 +225,4 @@ print(flag)
 
 Funny thing is, since we don't actually know which byte is what key, we need to do a little guesswork here, but, there are a few things we can rule out. The first is the *Enter* key, we can assume that the only separated byte that doesn't follow the sequence [**40**, 79, 80, 81, 82] is the *Enter* key. Also, since the starting highlighted position is on the upper left corner, we can rule out the left or up keys represent the first byte because it wouldn't make sense. What's left is just a few combinations and by using trial and error we would finally get the flag!
 
-> Flag: **joints20{pC4P_AND_It5_eZ1}**
+**`FLAG: joints20{pC4P_AND_It5_eZ1}`**

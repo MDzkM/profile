@@ -18,8 +18,17 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
-        path: `${__dirname}/src/posts`
-      }
+        path: `${__dirname}/src/posts`,
+      },
+      plugins: [
+        {
+          resolve: `gatsby-remark-images`,
+          options: {
+            maxWidth: 960,
+            wrapperStyle: fluidResult => `flex:${_.round(fluidResult.aspectRatio, 2)};`,
+          },
+        },
+      ],
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
