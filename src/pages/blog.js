@@ -16,7 +16,7 @@ const BlogPage = ({ data }) => {
 					const { frontmatter } = edge.node;
 					return (
                         <>
-                            <div style={{margin: `3%`, padding: `3%`, background: `white`, border: `1px solid #CACCCF`, boxShadow: `0 0 5px rgba(0, 0, 0, 0.1)`, boxSizing: `border-box`, borderRadius: `8px`}} key={frontmatter.path}>
+                            <div style={{margin: `3%`, padding: `3%`, border: `1px solid #CACCCF`, boxShadow: `0 0 5px rgba(0, 0, 0, 0.1)`, boxSizing: `border-box`, borderRadius: `8px`}} key={frontmatter.path}>
                                 <div style={{display: `flex`, flexDirection: `row`}}>
                                     <Link to={frontmatter.path}><h2 style={{fontWeight: 900}}>{frontmatter.title}</h2></Link>
                                     &nbsp;
