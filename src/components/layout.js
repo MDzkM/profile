@@ -46,6 +46,7 @@ class Layout extends Component {
       <ThemeProvider theme={mode}>
         <>
           <GlobalStyles />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
           <Header />
           <div
             style={{
