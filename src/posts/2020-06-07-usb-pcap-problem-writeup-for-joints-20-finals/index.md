@@ -1,6 +1,6 @@
 ---
 path: '/blog/2020/06/07/usb-pcap-problem-writeup-for-joints-20-finals'
-date: '2020-05-19'
+date: '2020-06-07'
 title: 'USB Pcap Problem Writeup for JOINTS 20 Finals'
 tags: ['2020', 'ctf', 'forensics', 'finals', 'joints']
 excerpt: 'It was fun so I thought I’d share it.'
