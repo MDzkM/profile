@@ -3,7 +3,7 @@ import React, { Component } from "react"
 import "./header.css"
 import { Navbar, Nav, Button } from "react-bootstrap"
 
-import { isBrowser, toggleDarkMode, toggleLightMode } from "../services/useLightMode"
+import { isBrowser, getLightMode, toggleDarkMode, toggleLightMode } from "../services/useLightMode"
 
 
 class Header extends Component {
@@ -37,8 +37,11 @@ class Header extends Component {
         <div className="brand">
           <Navbar.Brand><Link to="/" style={{textDecoration: `none`, fontWeight: `bold`}}>mdzkm.</Link></Navbar.Brand>
         </div>
-        <Nav.Item className="ml-auto theme-toggler-mobile mr-2"><Button variant="light" onClick={this.setLightMode}><span role="img" aria-label="Light Mode">☀</span></Button></Nav.Item>
-        <Nav.Item className="theme-toggler-mobile"><Button variant="dark" onClick={this.setDarkMode}><span role="img" aria-label="Dark Mode">🌙</span></Button></Nav.Item>
+        {getLightMode() ?
+        <Nav.Item className="ml-auto theme-toggler-mobile"><Button variant="dark" onClick={this.setDarkMode}><span role="img" aria-label="Dark Mode">🌙</span></Button></Nav.Item>
+        :
+        <Nav.Item className="ml-auto theme-toggler-mobile"><Button variant="light" onClick={this.setLightMode}><span role="img" aria-label="Light Mode">☀</span></Button></Nav.Item>
+        }
         <div className="mobile-collpase">
           <Navbar.Toggle aria-controls="basic-navbar-nav" style={{border: 0}}>
             <div role="button" tabIndex={0} className={`hamburger hamburger--squeeze ${isActive ? 'is-active' : ''}`} onClick={this.toggleHamburger} onKeyDown={this.toggleHamburger}>
@@ -55,8 +58,11 @@ class Header extends Component {
             <Nav.Item className="mr-4 dropdown-links"><Link to="/blog" style={{textDecoration: `none`}}>Blog</Link></Nav.Item>
           </Nav>
         </Navbar.Collapse>
-        <Nav.Item className="ml-auto theme-toggler mr-2"><Button variant="light" onClick={this.setLightMode}><span role="img" aria-label="Light Mode">☀</span></Button></Nav.Item>
+        {getLightMode() !== "" ? 
         <Nav.Item className="ml-auto theme-toggler"><Button variant="dark" onClick={this.setDarkMode}><span role="img" aria-label="Dark Mode">🌙</span></Button></Nav.Item>
+        :
+        <Nav.Item className="ml-auto theme-toggler"><Button variant="light" onClick={this.setLightMode}><span role="img" aria-label="Light Mode">☀</span></Button></Nav.Item>
+        }
       </Navbar>
     )
   }

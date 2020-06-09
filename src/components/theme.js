@@ -1,7 +1,7 @@
 export const lightTheme = {
     body: '#FFFFFF',
     subBody: '#F5F5F5',
-    borderColor: `#BEE1EE`,
+    borderColor: `#E8DCCA`,
     text: '#141414',
     inverseText: '#FFFFFF',
     inverseBackground: '#1B1B1B',
