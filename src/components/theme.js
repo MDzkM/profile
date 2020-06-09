@@ -3,6 +3,8 @@ export const lightTheme = {
     subBody: '#F5F5F5',
     borderColor: `#BEE1EE`,
     text: '#141414',
+    inverseText: '#FFFFFF',
+    inverseBackground: '#1B1B1B',
     toggleBorder: '#FFF',
     gradient: 'linear-gradient(#39598A, #79D7ED)',
 }
@@ -12,6 +14,8 @@ export const darkTheme = {
     subBody: '#1B1B1B',
     borderColor: `#454547`,
     text: '#FFFFFF',
+    inverseText: '#141414',
+    inverseBackground: '#F5F5F5',
     toggleBorder: '#6B8096',
     gradient: 'linear-gradient(#091236, #1E215D)',
 }

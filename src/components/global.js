@@ -75,5 +75,10 @@ export const GlobalStyles = createGlobalStyle`
   .session-search:focus + .looking-glass,
   .session-search:hover + .looking-glass {
 		border-color: ${({ theme }) => theme.borderColor};
-	}
+  }
+  
+  .find-out:hover code {
+    color: ${({ theme }) => theme.inverseText};
+    background-color: ${({ theme }) => theme.inverseBackground};
+  }
 `

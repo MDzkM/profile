@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const Styles = styled.div`
-    padding-top: 17%;
+    padding-top: 13%;
     padding-left:  1.0875rem;
     padding-right:  1.0875rem;
 
@@ -38,13 +38,27 @@ export const Styles = styled.div`
     }
 
     .webmakers-id {
-        text-decoration: none;
         color: #5383d3!important;
     }
 
     .universitas-indonesia {
-        text-decoration: none;
         color: #F4BC1C!important;
+    }
+
+    .find-out {
+        color: #007bff!important;
+        text-decoration: none;
+        transition: all 0.25s linear;
+    }
+
+    .find-out code {
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+          Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    }
+
+    .accounts {
+        margin-top: 5%;
+        margin-left: 4.5%;
     }
 
     .accounts a:first-child svg {
@@ -67,13 +81,31 @@ export const Styles = styled.div`
         }
 
         .img-wrapper {
-            width: 25%;
-            height: 25%;
+            width: 30%;
+            height: 30%;
             margin: 5% 5% 5% 0;
         }
 
         .description {
             text-align: left;
+        }
+
+        .accounts {
+            margin-top: 3%;
+            margin-left: 0;
+        }
+    }
+
+    @media only screen and (min-width: 1024px) and (min-height: 1366px) {
+        .accounts {
+            margin-top: 4%;
+            margin-left: 0;
+        }
+    }
+
+    @media only screen and (min-width: 768px) and (min-height: 1024px) {
+        .accounts {
+            margin-top: 3%;
         }
     }
 `

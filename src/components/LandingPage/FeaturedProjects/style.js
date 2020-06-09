@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const Styles = styled.div`
-    padding-top: 30%;
+    padding-top: 17%;
 
     .title {
         text-align: center;
@@ -34,10 +34,6 @@ export const Styles = styled.div`
         transform: scale(1.015);
         box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
         transition: all 0.15s linear;
-    }
-
-    .description-link {
-        color: #007bff;
     }
 
     .project-row {
