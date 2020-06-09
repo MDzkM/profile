@@ -14,7 +14,7 @@ export const Styles = styled.div`
     }
 
     .project-card {
-        padding: 2% 0;
+        margin: 3%;
     }
 
     .project-card h4 {
@@ -40,6 +40,11 @@ export const Styles = styled.div`
         color: #007bff;
     }
 
+    .project-row {
+        display: flex;
+        flex-direction: row;
+    }
+
     @media only screen and (min-width: 294px) and (max-width: 321px) {
         padding-top: 10%;
     }
@@ -57,8 +62,18 @@ export const Styles = styled.div`
     }
 
     @media only screen and (max-width: 991px) {
-        .bakcground-card {
-            padding: 5% 0;
+        .project-row {
+            flex-direction: column;
+        }
+
+        .project-card {
+            border-bottom: 5px dotted;
+            padding-bottom: 7%;
+        }
+
+        .project-row:last-child .project-card:last-child {
+            border-bottom: none;
+            padding-bottom: none;
         }
     }
 `

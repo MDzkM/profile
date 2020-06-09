@@ -1,28 +1,28 @@
 ---
-path: '/blog/2020/06/07/usb-pcap-problem-writeup-for-joints-20-finals'
+path: '/blog/2020/06/07/usb-pcap-writeup'
 date: '2020-06-07'
-title: 'USB Pcap Problem Writeup for JOINTS 20 Finals'
+title: 'USB Pcap Writeup'
 tags: ['2020', 'ctf', 'forensics', 'finals', 'joints']
-excerpt: 'It was fun so I thought I’d share it.'
+excerpt: 'It was a fun challenge from JOINTS 20 finals so I thought I’d share it.'
 ---
 
-**Before I begin, if you want to take a crack at this problem you can click *[here](./usb.pcapng)* for the package capture and click *[here](./index.html)*, *[here](./index.css)*, and *[here](./index.js)* for the html, css, and js respectively to run the simulated web environment. (I don't know if you can solve the problem without those but go for it if you want)**
+**Before I begin, if you want to take a crack at this problem you can click *[here](https://srv-file9.gofile.io/download/1rBfJ8/files-1rBfJ8.zip)* to download all the necessary files.**
 
 Okay, now that that's out of the way, we can start by analyzing the pcap file provided using wireshark. At first there seems like nothing is of our interest in the data being displayed. There is only one direction of traffic from the source address *2.1.1* to the destination address *host*.
 
-![Initial Wireshark Display](initial.png)
+![Initial Wireshark Display](https://i.ibb.co/djFp6Jm/initial.png)
 
 However, we can see that the whole traffic has a type of **INTERRUPT** which signals a keypress from the device. Another interesting find is the leftover data carried by every package contains a single printable byte each. (*That's curious...*)
 
-![After First Inspection](first-inspection.png)
+![After First Inspection](https://i.ibb.co/jf5ypHh/first-inspection.png)
 
 So to further analyze the traffic we want to display every leftover data by adding it as a column (**or by pressing *ctrl*+*shift*+*i***), removing every other column, and export it as a csv.
 
-![Added Leftover Data Column](add-column.png)
+![Added Leftover Data Column](https://i.ibb.co/wrqftHw/add-column.png)
 
-![Remove Other Columns](remove-columns.png)
+![Remove Other Columns](https://i.ibb.co/V9bL7XV/remove-columns.png)
 
-![Export as CSV](export-csv.png)
+![Export as CSV](https://i.ibb.co/SdZ71xX/export-csv.png)
 
 ```
 > cat leftover.csv
@@ -46,7 +46,7 @@ So to further analyze the traffic we want to display every leftover data by addi
 ...
 ```
 
-Then, you'd want to convert it into a txt and strip any trailing data (if there's any) by running this command in the terminal.
+Then, you'd want to convert it into a txt file and strip any trailing data (if there's any) by running this command in the terminal.
 
 ```bash
 cat [IN_FILE].csv | cut -d "," -f 1 | cut -d "\"" -f 2 | grep -vE [FIELD_NAME] > [OUT_FILE].txt
@@ -56,9 +56,92 @@ From the code segment above we can see that ```cut -d "," -f 1``` is used to sep
 
 After that, let's move on to the simulated web page and the javascript.
 
-![View Simulated Web Page](simulated-web-page.png)
+![View Simulated Web Page](https://i.ibb.co/1rb4WZs/simulated-web-page.png)
 
-![View javascript](javascript.png)
+```javascript
+document.onkeydown = checkKey;
+var flag = new Array('')
+for (var i=0;i<26;i++){
+	flag.push(' ')
+}
+ind=0;
+
+function checkKey(e) {
+    e = e || window.event;
+
+    k = document.getElementsByClassName("selected")[0];
+    if (e.keyCode == '38') {
+        // up arrow
+        row = parseInt(k.id.split('-')[0]);
+        col = parseInt(k.id.split('-')[1]);
+
+        // if top, do nothing
+        if(row == 1) return;
+        k.classList.remove('selected');
+        row -= 1;
+        col = col.toString().length <2 ? '0'+col:col;
+        k = document.getElementById(row.toString()+'-'+col)
+        k.classList.add('selected')
+    }
+    else if (e.keyCode == '40') {
+        // down arrow
+        row = parseInt(k.id.split('-')[0]);
+        col = parseInt(k.id.split('-')[1]);
+
+        // if bottom, do nothing
+        if(row == 3) return;
+        k.classList.remove('selected');
+        row += 1;
+        if (row==3 && col==26) col = 25;
+        col = col.toString().length <2 ? '0'+col:col;
+        k = document.getElementById(row.toString()+'-'+col)
+        k.classList.add('selected')
+    }
+    else if (e.keyCode == '37') {
+       // left arrow
+       row = parseInt(k.id.split('-')[0]);
+       col = parseInt(k.id.split('-')[1]);
+
+       // if left, do nothing
+       if(col == 1) return;
+       k.classList.remove('selected');
+       col -= 1;
+       col = col.toString().length <2 ? '0'+col:col;
+       k = document.getElementById(row.toString()+'-'+col)
+       k.classList.add('selected')
+    }
+    else if (e.keyCode == '39') {
+       // right arrow
+       row = parseInt(k.id.split('-')[0]);
+       col = parseInt(k.id.split('-')[1]);
+
+       // if right, do nothing
+       if(col == 26 || (row==3 && col == 25)) return;
+       k.classList.remove('selected');
+       col += 1;
+       col = col.toString().length <2 ? '0'+col:col;
+       k = document.getElementById(row.toString()+'-'+col)
+       k.classList.add('selected')
+    }
+    else if(e.keyCode == '13'){
+    	val = k.innerText;
+    	if(val != 'Del' && ind < 26){
+    		flag[ind++] = val;
+    		col = (ind).toString().length < 2? '0'+(ind).toString(): (ind).toString();
+			f = document.getElementById('f-'+col);
+			f.classList.add('filled');
+    		f.innerText = val;
+    	} else if(ind > 0 && val == 'Del'){
+    		// del
+    		flag[--ind] = ' ';
+    		col = (ind+1).toString().length < 2? '0'+(ind+1).toString(): (ind+1).toString();
+			f = document.getElementById('f-'+col);
+			f.classList.remove('filled');
+			f.innerText = ' ';
+    	}
+    }
+}
+```
 
 Things are starting to make sense now. Based on [this](https://css-tricks.com/snippets/javascript/javascript-keycodes/) website (although explicitly written in the js code comments), each conditional statement represents an arrow key or the *Enter* key being pressed.
 
@@ -91,8 +174,6 @@ When you look at the leftover data, there is only five variants of bytes, either
 The rest is probably the easier part, we only need to make a script to read the leftover data, convert each byte to its respective key, and simulate the entire thing.
 
 ```python
-flag = ""
-
 with open("leftover.txt") as file:
     KEY_MAP = {
         40: 'Enter',
@@ -187,7 +268,9 @@ with open("leftover.txt") as file:
         24: "_",
         25: "Del"
     }
-    
+
+    flag = ""
+   
     col = 1
     row = 1
 
@@ -220,7 +303,7 @@ with open("leftover.txt") as file:
                     elif (row == 3):
                         flag += NUMBERS_AND_SYMBOLS[col]
 
-print(flag)
+    print(flag)
 ```
 
 Funny thing is, since we don't actually know which byte is what key, we need to do a little guesswork here, but, there are a few things we can rule out. The first is the *Enter* key, we can assume that the only separated byte that doesn't follow the sequence [**40**, 79, 80, 81, 82] is the *Enter* key. Also, since the starting highlighted position is on the upper left corner, we can rule out the left or up keys represent the first byte because it wouldn't make sense. What's left is just a few combinations and by using trial and error we would finally get the flag!

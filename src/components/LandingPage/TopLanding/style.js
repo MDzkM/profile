@@ -2,6 +2,8 @@ import styled from "styled-components"
 
 export const Styles = styled.div`
     padding-top: 17%;
+    padding-left:  1.0875rem;
+    padding-right:  1.0875rem;
 
     .profile-container {
         display: flex;
@@ -35,6 +37,11 @@ export const Styles = styled.div`
         font-weight: 300;
     }
 
+    .webmakers-id {
+        text-decoration: none;
+        color: #5383d3!important;
+    }
+
     .universitas-indonesia {
         text-decoration: none;
         color: #F4BC1C!important;
@@ -44,12 +51,8 @@ export const Styles = styled.div`
         margin: -3.33px;
     }
 
-    .accounts svg {
-        opacity: 0.7
-    }
-
     .accounts svg:hover, .accounts svg:focus {
-        opacity: 1
+        opacity: 0.7;
     }
 
     .accounts a {

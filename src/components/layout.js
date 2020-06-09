@@ -21,27 +21,27 @@ import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './theme';
 import { GlobalStyles } from './global';
 
-import { getDarkMode } from "../services/useDarkMode"
+import { getLightMode } from "../services/useLightMode"
 
 class Layout extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      darkMode: false,
+      lightMode: false,
       children: null
     }
   }
 
   componentDidMount() {
     this.setState({
-      darkMode: getDarkMode(),
+      lightMode: getLightMode(),
       children: this.props.children
     })
   }
 
   render() {
-    const { darkMode, children } = this.state
-    const mode = darkMode ? darkTheme : lightTheme
+    const { lightMode, children } = this.state
+    const mode = lightMode ? lightTheme : darkTheme
     return (
       <ThemeProvider theme={mode}>
         <>
@@ -54,12 +54,11 @@ class Layout extends Component {
               flexDirection: `column`,
               margin: `0 auto`,
               maxWidth: 960,
-              padding: `0 1.0875rem 1.45rem`,
               height: `100%`,
             }}
           >
             <main>{children}</main>
-            <footer className="mt-auto" style={{width: `100%`, padding: `5% 0`, display: `flex`, flexDirection: `row`, alignItems: `center`}}>
+            <footer className="mt-auto" style={{paddingLeft:  `1.0875rem`, paddingRight:  `1.0875rem`, width: `100%`, paddingTop: `5%`, paddingBottom: `5%`, display: `flex`, flexDirection: `row`, alignItems: `center`}}>
               © {new Date().getFullYear()} mdzkm.
               <div className="footer-icons ml-auto">
                   <a href="https://www.github.com/MDzkM" target="_blank" rel="noopener noreferrer" title="Github"><Icon icon={socialGithubCircular} style={{fontSize: '53.33px'}} /></a>

@@ -8,41 +8,43 @@ class FeaturedProjects extends Component {
         return (
             <Styles>
                 <div className="background-card">
-                    <h1 className="title">- PROJECTS I'VE WORKED ON -</h1>
-                    <div className="project-card">
-                        <div className="img-wrapper">
-                            <Image imgName="compfest.png" alt="compfest"></Image>
+                    <h2 className="title">PROJECTS I'VE WORKED ON</h2>
+                    <div className="project-row">
+                        <div className="project-card">
+                            <div className="img-wrapper">
+                                <Image imgName="taman-siswa.png" alt="taman-siswa"></Image>
+                            </div>
+                            <h4>TAMAN SISWA</h4>
+                            <h5 className="subtitle-link"><a href="taman-siswa.com">taman-siswa.com</a></h5>
+                            <br/>
+                            <p style={{textAlign: `justify`, textJustify: `inter-word`}}>During the development of this website, it was the biggest project that I have ever been contracted for. Along with the team at Webmakers ID we finished developing this website in the course of several months. The website itself functions as the main platform for a startup by the name of Taman Siswa to interact with their customers.</p>
+                            <br/>
+                            <Link to="/projects" style={{textDecoration: `none`}}>Read more</Link>
                         </div>
-                        <h4>COMPFEST 12</h4>
-                        <h5><a href="compfest.id">compfest.id</a></h5>
-                        <br/>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis erat cursus, feugiat eros accumsan, sollicitudin neque. Curabitur commodo vitae purus non.</p>
-                        <br/>
-                        <Link to="/" style={{textDecoration: `none`}}>Read more</Link>
                     </div>
-                    <hr/>
-                    <div className="project-card">
-                        <div className="img-wrapper">
-                            <Image imgName="taman-siswa.png" alt="taman-siswa"></Image>
+                    <div className="project-row">
+                        <div className="project-card">
+                            <div className="img-wrapper">
+                                <Image imgName="compfest.png" alt="compfest"></Image>
+                            </div>
+                            <h4>COMPFEST 12</h4>
+                            <h5><a href="compfest.id">compfest.id</a></h5>
+                            <br/>
+                            <p style={{textAlign: `justify`, textJustify: `inter-word`}}>I was lucky to get the chance to work in the IT division of the COMPFEST 12 committee as a senior developer. The website went through several iterations over the course of its lifetime to serve as the main platform for not only external, but also internal purposes.</p>
+                            <br/>
+                            <Link to="/projects" style={{textDecoration: `none`}}>Read more</Link>
                         </div>
-                        <h4>TAMAN SISWA</h4>
-                        <h5 className="subtitle-link">taman-siswa.com</h5>
-                        <br/>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis erat cursus, feugiat eros accumsan, sollicitudin neque. Curabitur commodo vitae purus non.</p>
-                        <br/>
-                        <Link to="/" style={{textDecoration: `none`}}>Read more</Link>
-                    </div>
-                    <hr/>
-                    <div className="project-card">
-                        <div className="img-wrapper">
-                            <Image imgName="jmconstrindo.png" alt="jconstrindo"></Image>
+                        <div className="project-card">
+                            <div className="img-wrapper">
+                                <Image imgName="ev.png" alt="ev"></Image>
+                            </div>
+                            <h4>EV</h4>
+                            <h5 className="subtitle-link">a cute little bulb</h5>
+                            <br/>
+                            <p style={{textAlign: `justify`, textJustify: `inter-word`}}>During the development of COMPFEST 12's website, I was also tasked to recreate the official mascot (EV) in 3D. From the initial image provided by the Visual Design team, I constructed the model using Blender and was later showcased in the website using Unity.</p>
+                            <br/>
+                            <Link to="/projects" style={{textDecoration: `none`}}>Read more</Link>
                         </div>
-                        <h4>JM CONSTRINDO</h4>
-                        <h5 className="subtitle-link">jmconstrindo.id</h5>
-                        <br/>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis erat cursus, feugiat eros accumsan, sollicitudin neque. Curabitur commodo vitae purus non.</p>
-                        <br/>
-                        <Link to="/" style={{textDecoration: `none`}}>Read more</Link>
                     </div>
                 </div>
             </Styles>
