@@ -46,7 +46,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .project-card {
-    border-color: ${({ theme }) => theme.borderColor};
+    border-color: ${({ theme }) => theme.borderColor}!important;
   }
 
   .pagination .page-link {
