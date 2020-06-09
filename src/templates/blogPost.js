@@ -30,6 +30,25 @@ export const Styles = styled.div`
 		margin-left: auto;
 		margin-right: auto;
 	}
+
+	.other-title {
+		font-weight: 900;
+		margin: auto;
+	}
+
+	.other-title:focus, .other-title:hover {
+		opacity: 0.7;
+	}
+
+	.prev {
+		padding-left: 0.5rem;
+		text-align: left;
+	}
+
+	.next {
+		padding-right: 0.5rem;
+		text-align: right;
+	}
 `
 
 const Template = ({ data, pageContext }) => {
@@ -55,7 +74,7 @@ const Template = ({ data, pageContext }) => {
 									<Link to={prev.frontmatter.path} style={{textDecoration: `none`}}>
 										<div style={{display: `flex`, flexDirection: `row`, height: `100%`}}>
 											<Button variant="info" size="sm" style={{height: `auto`}}><h6>{"<"}</h6></Button>
-											<h4 style={{fontWeight: 900, paddingLeft: `0.5rem`, textAlign: `left`, margin: `auto`}}>{prev.frontmatter.title}</h4>
+											<h4 className="other-title prev">{prev.frontmatter.title}</h4>
 										</div>
 									</Link>
 								)}
@@ -64,7 +83,7 @@ const Template = ({ data, pageContext }) => {
 								{next && (
 									<Link to={next.frontmatter.path} style={{textDecoration: `none`}}>
 										<div style={{display: `flex`, flexDirection: `row`, height: `100%`}}>
-											<h4 style={{fontWeight: 900,paddingRight: `0.5rem`, textAlign: `right`, margin: `auto`}}>{next.frontmatter.title}</h4>
+											<h4 className="other-title next">{next.frontmatter.title}</h4>
 											<Button variant="info" size="sm" style={{height: `auto`}}><h6>{">"}</h6></Button>
 										</div>
 									</Link>

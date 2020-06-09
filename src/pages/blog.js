@@ -74,7 +74,7 @@ export const Styles = styled.div`
 	}
 
 	.dark {
-		opacity: 0.1;
+		opacity: 0.075;
 	}
 `
 
