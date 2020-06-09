@@ -215,11 +215,11 @@ class BlogPage extends Component {
 						<div className="search-box">
 							<input type="text" name="searchbox" className="session-search" onChange={this.handleChange} placeholder="Looking for a specific post?"></input>
 							<div className="looking-glass">
-								<div className={`looking-img-wrapper ${getLightMode() !== "" ? `light` : `dark`}`}>
+								<div className={`looking-img-wrapper ${getLightMode() !== "" ? `dark` : `light`}`}>
 									{getLightMode() !== "" ? 
-									<Image imgName="magnifying-glass-light.png" alt="magnifying-glass-light" />
-									:	
 									<Image imgName="magnifying-glass.png" alt="magnifying-glass" />
+									:	
+									<Image imgName="magnifying-glass-light.png" alt="magnifying-glass-light" />
 									}
 								</div>
 							</div>
