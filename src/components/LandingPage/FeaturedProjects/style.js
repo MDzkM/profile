@@ -45,6 +45,10 @@ export const Styles = styled.div`
         flex-direction: row;
     }
 
+    .read-more {
+        color: #007bff!important;
+    }
+
     @media only screen and (min-width: 294px) and (max-width: 321px) {
         padding-top: 10%;
     }
