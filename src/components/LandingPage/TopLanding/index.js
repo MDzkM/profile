@@ -21,7 +21,7 @@ class TopLanding extends Component {
                         <h5 className="alias"><i>a.k.a.</i> mdzkm</h5>
                         <br/>
                         <p>Hi there! I’m a full stack web developer, Head of Design at <a href="https://www.webmakers.id" target="_blank" rel="noopener noreferrer" className="webmakers-id" title="Official website of Webmakers ID">Webmakers ID</a>, and an aspiring game-dev who is currently studying in <a href="https://www.ui.ac.id" target="_blank" rel="noopener noreferrer" className="universitas-indonesia" title="Official website of Universitas Indonesia">Universitas Indonesia</a>.</p>
-                        <Link className="find-out" to="/about"><code> &nbsp; Find out more about me! &nbsp; </code></Link>
+                        <Link className="find-out" to="/"><code> &nbsp; Find out more about me! &nbsp; </code></Link>
                         <div className="accounts">
                             <a href="https://github.com/MDzkM" target="_blank" rel="noopener noreferrer" title="Github"><Icon icon={socialGithubCircular} style={{fontSize: '53.33px'}} /></a>
                             <a href="https://gitlab.com/MDzkM" target="_blank" rel="noopener noreferrer" title="Gitlab"><Icon icon={gitlabCircle} style={{fontSize: '48px'}} /></a>
