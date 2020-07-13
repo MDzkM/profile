@@ -6,7 +6,7 @@ tags: ['2020', 'ctf', 'forensics', 'finals', 'joints']
 excerpt: 'It was a fun challenge from JOINTS 20 finals so I thought I’d share it.'
 ---
 
-**Before I begin, if you want to take a crack at this problem you can click *[here](https://srv-file9.gofile.io/download/1rBfJ8/files-1rBfJ8.zip)* to download all the necessary files.**
+**Before I begin, if you want to take a crack at this problem you can click *[here](https://www.filehosting.org/file/details/881221/usb.pcapng)*, *[here](https://www.filehosting.org/file/details/881362/index.html)*, *[here](https://www.filehosting.org/file/details/881363/index.css)*, and *[here](https://www.filehosting.org/file/details/881364/index.js)* to download all the necessary files.**
 
 Okay, now that that's out of the way, we can start by analyzing the pcap file provided using wireshark. At first there seems like nothing is of our interest in the data being displayed. There is only one direction of traffic from the source address *2.1.1* to the destination address *host*.
 

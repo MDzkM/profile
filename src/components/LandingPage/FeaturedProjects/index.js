@@ -15,7 +15,7 @@ class FeaturedProjects extends Component {
                                 <Image imgName="taman-siswa.png" alt="taman-siswa"></Image>
                             </div>
                             <h4>TAMAN SISWA</h4>
-                            <h5 className="subtitle-link"><a href="https://epic-thompson-4f4568.netlify.app/" target="_blank" rel="noopener noreferrer" title="Official website of Taman Siswa">taman-siswa.com</a></h5>
+                            <h5 className="subtitle-link"><a href="https://taman-siswa.com" target="_blank" rel="noopener noreferrer" title="Official website of Taman Siswa">taman-siswa.com</a></h5>
                             <br/>
                             <p style={{textAlign: `justify`, textJustify: `inter-word`}}>During the development of this website, it was the biggest project that I have ever been contracted for. Along with the team at Webmakers ID we finished developing this website in the course of several months. The website itself functions as the main platform for a startup by the name of Taman Siswa to interact with their customers. The technology stacks used was React (with Gatsby) and Django REST.</p>
                             <br/>
@@ -28,7 +28,7 @@ class FeaturedProjects extends Component {
                                 <Image imgName="compfest.png" alt="compfest"></Image>
                             </div>
                             <h4>COMPFEST 12</h4>
-                            <h5><a href="https://www.compfest.id" target="_blank" rel="noopener noreferrer" title="Official website of COMPFEST">compfest.id</a></h5>
+                            <h5><a href="https://compfest.id" target="_blank" rel="noopener noreferrer" title="Official website of COMPFEST">compfest.id</a></h5>
                             <br/>
                             <p style={{textAlign: `justify`, textJustify: `inter-word`}}>I was lucky to get the chance to work in the IT division of the COMPFEST 12 committee as a senior developer. The website went through several iterations over the course of its lifetime to serve as the main platform for not only external, but also internal purposes. I mainly work as a frontend developer using React.</p>
                             <br/>
@@ -42,6 +42,19 @@ class FeaturedProjects extends Component {
                             <h5 className="subtitle-link">a cute little bulb</h5>
                             <br/>
                             <p style={{textAlign: `justify`, textJustify: `inter-word`}}>During the development of COMPFEST 12's website, I was also tasked to recreate the official mascot (EV) in a three dimensional form. Using the initial image provided by the Visual Design team as a base model, I constructed the model using Blender and was later showcased in the website with the help of Unity.</p>
+                            <br/>
+                            <Link className="read-more" to="/projects">Read more</Link>
+                        </div>
+                    </div>
+                    <div className="project-row">
+                        <div className="project-card">
+                            <div className="img-wrapper">
+                                <Image imgName="stacker.png" alt="stacker"></Image>
+                            </div>
+                            <h4>STACKER!</h4>
+                            <h5><a href="https://stacker.id" target="_blank" rel="noopener noreferrer" title="Official website of Stacker!">stacker.id</a></h5>
+                            <br/>
+                            <p style={{textAlign: `justify`, textJustify: `inter-word`}}>A webapp where users can create their weekly schedule and stack them on top of your friends' schedules. Users are able to sign in using their Google accounts. The purpose of this website is to help organize group schedules and simplify the task of finding an intersecting free time to make plans. This was initially a group project during my Advanced Programming course, built using Gatsby, SpringREST, and PostgreSQL. However, I'm in the process of migrating this website into my own repository and convert it into a MERN stack.</p>
                             <br/>
                             <Link className="read-more" to="/projects">Read more</Link>
                         </div>

@@ -55,7 +55,8 @@ class Header extends Component {
           <Nav className="mr-auto desktop-nav">
             <Nav.Item className="mr-4 dropdown-links"><Link to="/about" style={{textDecoration: `none`}}>About</Link></Nav.Item>
             <Nav.Item className="mr-4 dropdown-links"><Link to="/projects" style={{textDecoration: `none`}}>Projects</Link></Nav.Item>
-            <Nav.Item className="mr-4 dropdown-links"><Link to="/blog" style={{textDecoration: `none`}}>Blog</Link></Nav.Item>
+            <Nav.Item className="mr-4 dropdown-links"><Link href="https://resources.mdzkm.wtf" style={{textDecoration: `none`}}>Tutorials and Archives</Link></Nav.Item>
+            <Nav.Item className="mr-4 dropdown-links"><Link href="https://blog.mdzkm.wtf" style={{textDecoration: `none`}}>Blog</Link></Nav.Item>
           </Nav>
         </Navbar.Collapse>
         {getLightMode() !== "" ? 
