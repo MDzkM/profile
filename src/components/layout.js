@@ -14,8 +14,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { Icon } from "@iconify/react"
 import socialGithubCircular from "@iconify/icons-typcn/social-github-circular"
 import gitlabCircle from "@iconify/icons-jam/gitlab-circle"
-import youtubeCircle from "@iconify/icons-jam/youtube-circle"
 import linkedinCircle from "@iconify/icons-jam/linkedin-circle"
+import twitterCircle from "@iconify/icons-jam/twitter-circle"
 
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './theme';
@@ -61,10 +61,10 @@ class Layout extends Component {
             <footer className="mt-auto" style={{paddingLeft:  `1.0875rem`, paddingRight:  `1.0875rem`, width: `100%`, paddingTop: `5%`, paddingBottom: `5%`, display: `flex`, flexDirection: `row`, alignItems: `center`}}>
               © {new Date().getFullYear()} mdzkm.
               <div className="footer-icons ml-auto">
-                  <a href="https://www.github.com/MDzkM" target="_blank" rel="noopener noreferrer" title="Github"><Icon icon={socialGithubCircular} style={{fontSize: '53.33px'}} /></a>
-                  <a href="https://www.gitlab.com/MDzkM" target="_blank" rel="noopener noreferrer" title="Gitlab"><Icon icon={gitlabCircle} style={{fontSize: '48px'}} /></a>
-                  <a href="https://www.youtube.com/channel/UCIeCJ3CGn5ciVIEDNzkuABg" target="_blank" rel="noopener noreferrer" title="Youtube"><Icon icon={youtubeCircle} style={{fontSize: '48px'}} /></a>
-                  <a href="https://www.linkedin.com/in/MDzkM" target="_blank" rel="noopener noreferrer" title="LinkedIn"><Icon icon={linkedinCircle} style={{fontSize: '48px'}} /></a>
+                  <a href="https://github.com/MDzkM" target="_blank" rel="noopener noreferrer" title="Github"><Icon icon={socialGithubCircular} style={{fontSize: '53.33px'}} /></a>
+                  <a href="https://gitlab.com/MDzkM" target="_blank" rel="noopener noreferrer" title="Gitlab"><Icon icon={gitlabCircle} style={{fontSize: '48px'}} /></a>
+                  <a href="https://linkedin.com/in/MDzkM" target="_blank" rel="noopener noreferrer" title="LinkedIn"><Icon icon={linkedinCircle} style={{fontSize: '48px'}} /></a>
+                  <a href="https://twitter.com/mdzkm" target="_blank" rel="noopener noreferrer" title="Twitter"><Icon icon={twitterCircle} style={{fontSize: '48px'}} /></a>
               </div>
             </footer>
           </div>
